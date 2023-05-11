@@ -1,8 +1,8 @@
-require ".lib/node"
+require "./lib/node"
 
 RSpec.describe do
     it 'exist' do
-        node = Node.new
+        node = Node.new("plop")
 
         expect(node).to be_a(Node)
     end
