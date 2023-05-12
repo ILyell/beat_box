@@ -63,4 +63,41 @@ RSpec.describe do
         expect(list.head.next_node.data).to eq("plop")
         expect(list.head.next_node.next_node.data).to eq("drop")
     end
+    it 'can find elements in the list' do
+        list = LinkedList.new
+
+        list.prepend("drop")
+        list.prepend("bop")
+        list.insert(1, "plop")
+        list.append("doop")
+        list.append("moop")
+
+        expect(list.find(2, 1)).to eq("drop")
+        expect(list.find(1, 3)).to eq("plop drop doop")
+    end
+    it 'Can see if a value is in the list' do
+        list = LinkedList.new
+
+        list.prepend("drop")
+        list.prepend("bop")
+        list.insert(1, "plop")
+        list.append("doop")
+        list.append("moop")
+
+        expect(list.includes?("drop")).to eq(true)
+        expect(list.includes?("beep")).to eq(false)
+        expect(list.includes?("moop")).to eq(true)
+    end
+    it 'can pop an element from the end of the list' do
+        list = LinkedList.new
+
+        list.prepend("drop")
+        list.prepend("bop")
+        list.insert(1, "plop")
+        list.append("doop")
+        list.append("moop")
+
+        expect(list.pop).to eq("moop")
+        expect(list.pop).to eq("doop")
+    end
 end
