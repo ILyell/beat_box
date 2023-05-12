@@ -70,4 +70,10 @@ class LinkedList
             node_hold.next_node = new_node
         end
     end
+    def find(index, amount)
+        
+        (index - 1).times do 
+            
+        end
+    end
 end
