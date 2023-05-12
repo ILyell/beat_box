@@ -1,5 +1,5 @@
 require "./lib/node"
-require "./lib/linkedlist"
+require "./lib/linked_list"
 
 RSpec.describe do 
     it 'exist' do

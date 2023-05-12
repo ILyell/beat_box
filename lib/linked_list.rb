@@ -7,6 +7,7 @@ class LinkedList
     def initialize
         @head = nil
     end
+
     def append(data)
         if @head == nil
             @head = Node.new(data)
@@ -18,6 +19,7 @@ class LinkedList
             node_hold.next_node = Node.new(data)
         end
     end
+
     def count
         counter = 0
         if @head != nil
@@ -30,6 +32,7 @@ class LinkedList
         end
         counter
     end
+
     def to_string
         data = []
         node_hold = @head
@@ -44,6 +47,7 @@ class LinkedList
         end
         data.join(" ")
     end
+
     def prepend(data) 
         if @head == nil 
             @head = Node.new(data) 
@@ -53,6 +57,7 @@ class LinkedList
             @head.next_node = old_node 
         end 
     end
+
     def insert(index, data)
         if @head == nil 
             @head = Node.new(data)
@@ -70,6 +75,7 @@ class LinkedList
             node_hold.next_node = new_node
         end
     end
+
     def find(index, amount)
         data_hold = []
         if index == 0
@@ -87,6 +93,7 @@ class LinkedList
         end
         data_hold.join(" ")
     end
+
     def includes?(data)
         node_hold = @head
         included = false
@@ -99,6 +106,7 @@ class LinkedList
         end
         included
     end
+
     def pop
         node_hold = @head
         until node_hold.next_node.next_node == nil
