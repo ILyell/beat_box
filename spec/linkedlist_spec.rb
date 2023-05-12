@@ -12,7 +12,7 @@ RSpec.describe do
 
         expect(list.head).to eq(nil)
     end
-    it 'Can add a node the the front of the list' do
+    it 'Can add a node the back of the list' do
         list = LinkedList.new
 
         list.head
@@ -20,7 +20,7 @@ RSpec.describe do
         list.append("drop")
         expect(list.head.data).to eq("drop")
         list.append("bop")
-        expect(list.head.data).to eq("bop")
+        expect(list.head.next_node.data).to eq("bop")
     end
     it 'can count the nodes contained' do
         list = LinkedList.new
@@ -34,8 +34,8 @@ RSpec.describe do
     end
     it 'Can put the data into a string' do
         list = LinkedList.new
-        list.append("drop")
         list.append("blop")
+        list.append("drop")
         
         expect(list.to_string).to eq("blop drop")
     end
