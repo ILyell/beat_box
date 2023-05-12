@@ -36,8 +36,10 @@ RSpec.describe do
         list = LinkedList.new
         list.append("blop")
         list.append("drop")
+        list.append("bop")
+        # list.append("dropldddl")
         
-        expect(list.to_string).to eq("blop drop")
+        expect(list.to_string).to eq("blop drop bop")
     end
     it 'Can add a node to the front of the list' do
         list = LinkedList.new
@@ -59,6 +61,6 @@ RSpec.describe do
 
         expect(list.head.data).to eq("bop")
         expect(list.head.next_node.data).to eq("plop")
-        expect(list.next_node.next_node.data).to eq("drop")
+        expect(list.head.next_node.next_node.data).to eq("drop")
     end
 end

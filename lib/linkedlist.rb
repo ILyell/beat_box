@@ -1,4 +1,4 @@
-require "/node"
+# require "/node"
 
 class LinkedList
 
@@ -12,11 +12,10 @@ class LinkedList
             @head = Node.new(data)
         elsif @head != nil
             node_hold = @head
-            if node_hold.next_node != nil
-                node_hold = node.next_node.next_node
-            elsif node_hold.next_node == nil
-                node_hold.next_node = Node.new(data)
+            while node_hold.next_node != nil do
+                node_hold = node_hold.next_node
             end
+            node_hold.next_node = Node.new(data)
         end
     end
     def count
@@ -25,8 +24,8 @@ class LinkedList
             counter += 1 
             node_hold = @head
             while node_hold.next_node != nil
-                 counter += 1
-                 node_hold = node_hold.next_node
+                counter += 1
+                node_hold = node_hold.next_node
             end
         end
         counter
@@ -57,12 +56,18 @@ class LinkedList
     def insert(index, data)
         if @head == nil 
             @head = Node.new(data)
+        elsif index == 0
+            prepend(data)
+        elsif index > count
+            append(data)
         elsif @head != nil && index != 0
             new_node = Node.new(data)
             node_hold = @head
-            index.times do 
-               node_hold = node_hold.next_node 
+            (index - 1).times do 
+                node_hold = node_hold.next_node 
             end
+            new_node.next_node = node_hold.next_node
+            node_hold.next_node = new_node
         end
     end
 end
