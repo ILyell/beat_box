@@ -45,4 +45,24 @@ class LinkedList
         end
         data.join(" ")
     end
+    def prepend(data) 
+        if @head == nil 
+            @head = Node.new(data) 
+        elsif @head != nil 
+            old_node = @head 
+            @head = Node.new(data) 
+            @head.next_node = old_node 
+        end 
+    end
+    def insert(index, data)
+        if @head == nil 
+            @head = Node.new(data)
+        elsif @head != nil && index != 0
+            new_node = Node.new(data)
+            node_hold = @head
+            index.times do 
+               node_hold = node_hold.next_node 
+            end
+        end
+    end
 end

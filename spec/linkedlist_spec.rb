@@ -57,8 +57,8 @@ RSpec.describe do
         list.prepend("bop")
         list.insert(1, "plop")
 
-        expect(list.data).to eq("bop")
-        expect(list.next_node.data).to eq("plop")
+        expect(list.head.data).to eq("bop")
+        expect(list.head.next_node.data).to eq("plop")
         expect(list.next_node.next_node.data).to eq("drop")
     end
 end
