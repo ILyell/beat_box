@@ -71,9 +71,41 @@ class LinkedList
         end
     end
     def find(index, amount)
-        
-        (index - 1).times do 
-            
+        data_hold = []
+        if index == 0
+            node_hold = @head
+        elsif index != 0
+            node_hold = @head
+            (index).times do
+                node_hold = node_hold.next_node
+            end
+            data_hold << node_hold.data
+            (amount - 1).times do 
+                node_hold = node_hold.next_node
+                data_hold << node_hold.data
+            end
         end
+        data_hold.join(" ")
+    end
+    def includes?(data)
+        node_hold = @head
+        included = false
+        while node_hold != nil
+            if node_hold.data == data
+                included = true
+                break
+            end
+            node_hold = node_hold.next_node
+        end
+        included
+    end
+    def pop
+        node_hold = @head
+        until node_hold.next_node.next_node == nil
+            node_hold = node_hold.next_node
+        end
+        data_hold = node_hold.next_node.data
+        node_hold.next_node = nil
+        data_hold
     end
 end

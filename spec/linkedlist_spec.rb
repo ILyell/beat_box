@@ -98,6 +98,8 @@ RSpec.describe do
         list.append("moop")
 
         expect(list.pop).to eq("moop")
+        expect(list.count).to eq(4)
         expect(list.pop).to eq("doop")
+        expect(list.count).to eq(3)
     end
 end
