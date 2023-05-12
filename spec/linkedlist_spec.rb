@@ -18,18 +18,25 @@ RSpec.describe do
         list.head
         expect(list.head).to eq(nil)
         list.append("drop")
-        expect(list.node.data).to eq("drop")
+        expect(list.head.data).to eq("drop")
+        list.append("bop")
+        expect(list.head.data).to eq("bop")
     end
     it 'can count the nodes contained' do
         list = LinkedList.new
         list.append("drop")
 
-        expect(list.count).to eq(1)
+        # expect(list.count).to eq(1)
+
+        list.append("blop")
+
+        expect(list.count).to eq(2)
     end
     it 'Can put the data into a string' do
         list = LinkedList.new
         list.append("drop")
+        list.append("blop")
         
-        expect(list.to_string).to eq("doop")
+        expect(list.to_string).to eq("blop drop")
     end
 end
