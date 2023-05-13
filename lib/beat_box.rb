@@ -1,4 +1,4 @@
-require "/linked_list"
+
 
 class BeatBox
 
@@ -13,9 +13,15 @@ class BeatBox
         data_hold.each do |data|
             list.append(data.to_s)
         end
+        string
     end
 
     def count
         list.count
+    end
+
+    def play
+        `say -r 40 -v Fred #{list.to_string}`
+        count
     end
 end
