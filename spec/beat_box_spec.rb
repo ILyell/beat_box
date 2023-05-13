@@ -46,4 +46,24 @@ RSpec.describe do
 
         expect(bb.all).to eq("woo hoo shu deep doo ditt")
     end
+
+    it 'can take data at initialization' do
+        bb = BeatBox.new("deep")
+
+        expect(bb.all).to eq("deep")
+    end
+
+    it 'can filter inputs to append and prepend' do
+        bb = BeatBox.new("deep")
+
+        expect(bb.list.to_string).to eq("deep")
+
+        bb.append("Mississippi")
+        
+        expect(bb.all).to eq("deep")
+
+        bb.prepend("tee tee tee Mississippi")
+
+        expect(bb.all).to eq("tee tee tee deep")
+    end
 end
