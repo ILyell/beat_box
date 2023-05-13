@@ -66,4 +66,41 @@ RSpec.describe do
 
         expect(bb.all).to eq("tee tee tee deep")
     end
+
+    it 'can have a diffrent voice' do
+        bb = BeatBox.new("deep doo ditt")
+
+        bb.voice("Daniel")
+
+        expect(bb.voice).to eq("Daniel")
+    end
+
+    it 'can have a diffrent rate' do
+        bb = BeatBox.new("deep doo ditt")
+
+        bb.rate(100)
+
+        expect(bb.rate).to eq(100)
+    end
+
+    it 'can reset the voice' do
+        bb = BeatBox.new("deep doo ditt")
+
+        bb.voice("Daniel")
+
+        bb.reset_voice
+
+        expect(bb.voice).to eq("Fred")
+    end
+
+    it 'can reset the rate' do
+        bb = BeatBox.new("deep doo ditt")
+
+        bb.rate(100)
+
+        bb.reset_rate
+
+        expect(bb.rate).to eq(500)
+    end
+
 end
