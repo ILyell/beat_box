@@ -16,8 +16,20 @@ class BeatBox
         string
     end
 
+    def prepend(string)
+        data_hold = string.split(" ")
+        data_hold.reverse.each do |data|
+            list.prepend(data.to_s)
+        end
+        string
+    end
+
     def count
         list.count
+    end
+
+    def all
+        list.to_string
     end
 
     def play
