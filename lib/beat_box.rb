@@ -7,6 +7,8 @@ class BeatBox
     def initialize(data = nil)
         @list = LinkedList.new
         node_create(data)
+        @voice = "Fred"
+        @rate = 500
     end
 
     def append(string)
@@ -34,7 +36,7 @@ class BeatBox
     end
 
     def play
-        `say -r 40 -v Fred #{list.to_string}`
+        `say -r #{@rate} -v #{@voice} #{list.to_string}`
         count
     end
 
@@ -44,5 +46,21 @@ class BeatBox
 
     def word_list
         "beep doop deep pop bam woo hoo shu doo ditt tee"
+    end
+    
+    def rate(rate)
+        @rate = rate
+    end
+
+    def voice(voice)
+        @voice = voice
+    end
+
+    def reset_rate
+        rate(500)
+    end
+
+    def reset_voice
+        voice("Fred")
     end
 end

@@ -2,6 +2,7 @@ require "./lib/node"
 require "./lib/linked_list"
 require "./lib/beat_box"
 
+
 RSpec.describe do
 
     it "exist" do
@@ -72,7 +73,7 @@ RSpec.describe do
 
         bb.voice("Daniel")
 
-        expect(bb.voice).to eq("Daniel")
+        expect(bb.voice"Daniel").to eq("Daniel")
     end
 
     it 'can have a diffrent rate' do
@@ -80,7 +81,7 @@ RSpec.describe do
 
         bb.rate(100)
 
-        expect(bb.rate).to eq(100)
+        expect(bb.rate(100)).to eq(100)
     end
 
     it 'can reset the voice' do
