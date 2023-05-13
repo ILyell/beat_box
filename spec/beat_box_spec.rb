@@ -26,5 +26,6 @@ RSpec.describe do
         bb.append("woo hoo shu")
 
         expect(bb.count).to eq(6)
+        expect(bb.list.to_string).to eq("deep doo ditt woo hoo shu")
     end
 end
