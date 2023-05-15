@@ -1,4 +1,4 @@
-# require "/node"
+require "/node"
 
 class LinkedList
 
@@ -20,7 +20,7 @@ class LinkedList
             while node_hold.next_node != nil do
                 node_hold = node_hold.next_node
             end
-            node_hold.next_node = Node.new(data)
+            node_hold.new_node(Node.new(data))
         end
     end
 
@@ -64,7 +64,7 @@ class LinkedList
         elsif @head != nil 
             old_node = @head 
             @head = Node.new(data) 
-            @head.next_node = old_node 
+            @head.new_node(old_node) 
         end 
     end
 
@@ -83,8 +83,8 @@ class LinkedList
             (index - 1).times do 
                 node_hold = node_hold.next_node 
             end
-            new_node.next_node = node_hold.next_node
-            node_hold.next_node = new_node
+            new_node.new_node(node_hold.next_node)
+            node_hold.new_node(new_node)
         end
     end
 
@@ -131,7 +131,7 @@ class LinkedList
             node_hold = node_hold.next_node
         end
         data_hold = node_hold.next_node.data
-        node_hold.next_node = nil
+        node_hold.new_node(nil)
         data_hold
     end
 end
