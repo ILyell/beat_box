@@ -9,7 +9,7 @@ class Node
         @next_node = nil
     end
 
-    def next_node(node= nil)
+    def new_node(node= nil)
         @next_node = node
     end
 end
