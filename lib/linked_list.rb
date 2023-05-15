@@ -4,9 +4,13 @@ class LinkedList
 
     attr_reader :head
 
+    # Initialize LinkedList Class
+
     def initialize
         @head = nil
     end
+
+    # Append data the the back of the list, creating node connections when doing so.
 
     def append(data)
         if @head == nil
@@ -20,6 +24,8 @@ class LinkedList
         end
     end
 
+    # count the amount of nodes present in the LinkedList
+
     def count
         counter = 0
         if @head != nil
@@ -32,6 +38,8 @@ class LinkedList
         end
         counter
     end
+
+    # Convert the data in the linked list into one string
 
     def to_string
         data = []
@@ -48,6 +56,8 @@ class LinkedList
         data.join(" ")
     end
 
+    # Prepend the data to the front of the list making the new node the head node and add connectoin to next node
+
     def prepend(data) 
         if @head == nil 
             @head = Node.new(data) 
@@ -57,6 +67,8 @@ class LinkedList
             @head.next_node = old_node 
         end 
     end
+
+    # Insert data at a specific index, creating connections to the prepended and appended nodes
 
     def insert(index, data)
         if @head == nil 
@@ -76,6 +88,8 @@ class LinkedList
         end
     end
 
+    # Find data starting at a given index then the appending nodes if needed
+
     def find(index, amount)
         data_hold = []
         if index == 0
@@ -94,6 +108,8 @@ class LinkedList
         data_hold.join(" ")
     end
 
+    # Checks if any nodes containt the given data and returns boolean
+
     def includes?(data)
         node_hold = @head
         included = false
@@ -106,6 +122,8 @@ class LinkedList
         end
         included
     end
+
+    # Pop data from the end of the node and returns it
 
     def pop
         node_hold = @head
