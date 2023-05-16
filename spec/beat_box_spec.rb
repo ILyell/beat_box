@@ -91,7 +91,7 @@ RSpec.describe do
 
         bb.reset_voice
 
-        expect(bb.voice).to eq("Fred")
+        expect(bb.voice("Fred")).to eq("Fred")
     end
 
     it 'can reset the rate' do
@@ -101,7 +101,7 @@ RSpec.describe do
 
         bb.reset_rate
 
-        expect(bb.rate).to eq(500)
+        expect(bb.rate(500)).to eq(500)
     end
 
 end
